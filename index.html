@@ -113,7 +113,20 @@
     .tag { font-family: var(--mono); font-size: 0.76rem; padding: 0.45rem 1rem; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); letter-spacing: 0.04em; transition: all 0.2s; background: var(--surface2); }
     .tag:hover { border-color: var(--violet); color: var(--text); background: rgba(124,92,252,0.08); }
 
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .portfolio-card { background: linear-gradient(160deg, #1e1e3a 0%, #14142a 100%); border-radius: 20px; overflow: hidden; position: relative; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 40px rgba(0,0,0,0.4); border-top: 3px solid var(--violet); }
+    .portfolio-card:nth-child(2) { border-top-color: var(--cyan); }
+    .portfolio-card:nth-child(3) { border-top-color: var(--pink); }
+    .portfolio-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(124,92,252,0.2); }
+    .portfolio-card-inner { padding: 2rem; }
+    .portfolio-card h3 { font-family: var(--display); font-size: 1.2rem; font-weight: 800; margin-bottom: 0.6rem; letter-spacing: -0.02em; color: #f0f0fa; }
+    .portfolio-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
+    .portfolio-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+    .portfolio-tag { font-family: var(--mono); font-size: 0.68rem; padding: 0.25rem 0.6rem; border: 1px solid var(--border); border-radius: 4px; color: var(--muted); }
+    .portfolio-footer { display: flex; justify-content: flex-end; background: rgba(0,0,0,0.2); padding: 0.9rem 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
+    .portfolio-link { font-family: var(--mono); font-size: 0.76rem; color: var(--cyan); text-decoration: none; letter-spacing: 0.05em; transition: opacity 0.2s; }
+    .portfolio-link:hover { opacity: 0.7; }
+    @media (max-width: 768px) { .portfolio-grid { grid-template-columns: 1fr; } }
     .contact-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; position: relative; overflow: hidden; }
     .contact-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--violet), var(--cyan)); }
     .contact-card h3 { font-family: var(--display); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.8rem; }
@@ -156,6 +169,7 @@
     <ul class="nav-links">
       <li><a href="#servizi">Servizi</a></li>
       <li><a href="#stack">Stack</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#contatto" class="nav-cta">Contattami</a></li>
     </ul>
   </nav>
@@ -255,8 +269,63 @@
       </div>
     </div>
 
+    <section id="portfolio">
+      <p class="section-eyebrow">// 03 — portfolio</p>
+      <h2 class="section-title">Progetti <span>realizzati</span></h2>
+      <div class="portfolio-grid">
+
+        <div class="portfolio-card">
+          <div class="portfolio-card-inner">
+            <h3>Rosa Basilico</h3>
+            <p>Sito WordPress per brand di ricami artigianali. Tema child custom con CMS gestionale completo: ordini, notifiche email, contabilità con grafici, admin prodotti drag&drop, GDPR cookie banner.</p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">WordPress</span>
+              <span class="portfolio-tag">PHP</span>
+              <span class="portfolio-tag">JavaScript</span>
+              <span class="portfolio-tag">MySQL</span>
+            </div>
+          </div>
+          <div class="portfolio-footer">
+            <a href="https://www.rosabasilico.it" target="_blank" class="portfolio-link">Visita il sito ↗</a>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-card-inner">
+            <h3>CI.ERRE Verniciature</h3>
+            <p>Sito statico per azienda di verniciatura e restauro infissi. 19 pagine, hero slider, portfolio filtrabile, form preventivo dinamico a 3 tipologie, pannello admin interattivo con gestione portfolio e preventivi.</p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">HTML</span>
+              <span class="portfolio-tag">CSS</span>
+              <span class="portfolio-tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="portfolio-footer">
+            <a href="https://francescomartini49-sys.github.io/cierre-verniciature" target="_blank" class="portfolio-link">Visita il sito ↗</a>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-card-inner">
+            <h3>Sales Dashboard</h3>
+            <p>Dashboard dati interattiva con upload CSV/Excel/SQLite, grafici vendite in tempo reale, filtri dinamici per periodo e categoria, KPI automatici ed export dati.</p>
+            <div class="portfolio-tags">
+              <span class="portfolio-tag">Python</span>
+              <span class="portfolio-tag">Streamlit</span>
+              <span class="portfolio-tag">Plotly</span>
+              <span class="portfolio-tag">Pandas</span>
+            </div>
+          </div>
+          <div class="portfolio-footer">
+            <a href="https://sales-dashboard-demo-apokdxom6bu6jjxmqqpmzx.streamlit.app/" target="_blank" class="portfolio-link">Demo live ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <section id="contatto">
-      <p class="section-eyebrow">// 03 — contatto</p>
+      <p class="section-eyebrow">// 04 — contatto</p>
       <h2 class="section-title">Parliamo del<br><span>tuo progetto</span></h2>
       <div class="contact-grid">
         <div class="contact-card">
